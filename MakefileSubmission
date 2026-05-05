@@ -1,0 +1,15 @@
+# Complier and flags
+CXX = g++
+
+# Source files
+SOURCES = main.cpp file_read_funcs.cpp classes.cpp RGBPixel.cpp PNG.cpp lodepng.cpp
+
+# Executable name
+TARGET = main
+
+# Build exec
+build:
+	$(CXX) $(SOURCES) -o $(TARGET)
+
+run:
+	./$(TARGET) $(file)

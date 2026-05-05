@@ -1,0 +1,94 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+
+        {
+            "name": "Main Exec Debug",
+            "type": "cppdbg",
+            "request": "launch",
+            "stopAtEntry": true,
+            "cwd": "${workspaceFolder}",
+            "program": "${workspaceFolder}/main.exe",
+            "MIMode": "gdb",
+            "args": [
+                "${input:firstArg}",
+                // "${input:secondArg}",
+                // "${input:thirdArg}"
+            ],
+            "setupCommands": [
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                }
+            ],
+            // "miDebuggerPath": "C:/MinGW/bin/gdb.exe"
+            "miDebuggerPath": "C:/msys64/ucrt64/bin/gdb.exe"
+        },
+        {
+            "name": "Submission Debug",
+            "type": "cppdbg",
+            "request": "launch",
+            "stopAtEntry": true,
+            "cwd": "${workspaceFolder}",
+            "program": "${workspaceFolder}/main.exe",
+            "MIMode": "gdb",
+            "args": [
+                "${input:firstArg}"
+            ],
+            "setupCommands": [
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                }
+            ],
+            "miDebuggerPath": "C:/MinGW/bin/gdb.exe"
+        },
+        {
+            "name": "Test Debug",
+            "type": "cppdbg",
+            "request": "launch",
+            "stopAtEntry": true,
+            "cwd": "${workspaceFolder}",
+            // "cwd": "C:/Users/tobia/OneDrive/Documents/School/All Classes/Computer Science/CS 418 Interactive Computer Graphics/MachineProjects/rasterizer",
+            "program": "${workspaceFolder}/test.exe",
+            // "program": "C:/Users/tobia/OneDrive/Documents/School/All Classes/Computer Science/CS 418 Interactive Computer Graphics/MachineProjects/rasterizer/test.exe",
+            "MIMode": "gdb",
+            "args": [
+                "${input:firstArg}"
+            ],
+            "setupCommands": [
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                }
+            ],
+            "miDebuggerPath": "C:/msys64/ucrt64/bin/gdb.exe"
+        }
+    ],
+    "inputs": [
+        {
+            "type": "promptString",
+            "id": "firstArg",
+            "description": "Enter your command line arguments",
+            "default": ""
+        },
+        {
+            "type": "promptString",
+            "id": "secondArg",
+            "description": "Enter your command line arguments",
+            "default": ""
+        },
+        {
+            "type": "promptString",
+            "id": "thirdArg",
+            "description": "Enter your command line arguments",
+            "default": ""
+        }
+    ]
+}
